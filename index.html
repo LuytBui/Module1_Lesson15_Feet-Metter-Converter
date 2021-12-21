@@ -1,10 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Chuyển đổi giữa feet và meters</title>
+    <style>
+        th, td {
+            width: 20%;
+            text-align: center;
+        }
+
+    </style>
 </head>
 <body>
-$END$
+
+
+
+<script>
+    function footToMeter(foot){
+        return 0.305 * foot;
+    }
+    function meterToFoot(meter){
+        return 3.279 * meter;
+    }
+let html = '<table>';
+    html += '<tr><th>Feet</th><th>|</th><th>Meters</th></tr>';
+    for (let feet = 1; feet<=10; feet++){
+        html += '<tr><td>' + feet + '</td><td>|</td><td>' +  footToMeter(feet) +'</td></tr>';
+    }
+    html+= '</table>';
+    html+= '<br>';
+
+    html += '<table>';
+    html += '<tr><th>Meters</th><th>|</th><th>Feet</th></tr>';
+    for (let meter = 20; meter<=65; meter += 5){
+        html += '<tr><td>' + meter + '</td><td>|</td><td>' +  meterToFoot(meter) +'</td></tr>';
+    }
+    html+= '</table>';
+
+document.write(html);
+
+</script>
+
 </body>
 </html>
